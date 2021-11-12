@@ -5,44 +5,14 @@ const NewExpenseForm = (props) => {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
-  // __________________USING 1 STATE________________
-  // const [userInput, setUserInput] = useState({
-  //   enteredTitle: "",
-  //   enteredAmount: "",
-  //   enteredDate: "",
-  // });
-
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-
-    // __________________USING 1 STATE________________
-    // setUserInput({
-    //   ...userInput,
-    //   enteredTitle: event.target.value,
-    // });
-
-    //______________USE THIS WHENEVER WE DEPEND ON PREVIOUS STATE______________
-    // setUserInput((preVal) => {
-    //   return { ...preVal, enteredTitle: event.target.value };
-    // });
   };
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
-
-    // __________________USING 1 STATE________________
-    // setUserInput({
-    //   ...userInput,
-    //   enteredAmount: event.target.value,
-    // });
   };
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
-
-    // __________________USING 1 STATE________________
-    // setUserInput({
-    //   ...userInput,
-    //   enteredDate: event.target.value,
-    // });
   };
 
   const submitHandler = (event) => {
@@ -66,7 +36,7 @@ const NewExpenseForm = (props) => {
       onSubmit={submitHandler}
       className="flex justify-center w-full p-4 sm:w-9/12 sm:m-auto"
     >
-      <div className="w-full p-6 border-l-8 border-r-8 border-purple-600 rounded-lg shadow bg-gradient-to-bl from-purple-200 via-gray-100 to-purple-200">
+      <div className="w-full p-6 border-l-8 border-r-8 border-purple-600 rounded-lg shadow-lg bg-gradient-to-bl from-purple-200 via-gray-100 to-purple-200">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="relative p-1 transition-all duration-500 border-2 border-gray-400 rounded focus-within:border-purple-500 focus-within:text-purple-500">
             <div className="absolute px-1 -mt-4 text-xs tracking-wider uppercase">

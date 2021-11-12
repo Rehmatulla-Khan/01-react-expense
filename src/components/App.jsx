@@ -27,7 +27,6 @@ const App = () => {
     setFilteredYear(selectedYear);
   };
 
-  console.log(filteredExpData);
   return (
     <div className="bg-purple-200">
       <div>

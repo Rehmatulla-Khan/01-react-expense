@@ -9909,6 +9909,12 @@ video {
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes pulse {
   50% {
     opacity: .5;
@@ -9937,6 +9943,10 @@ video {
 
 .animate-ping {
   animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
 }
 
 .animate-pulse {
@@ -39185,6 +39195,10 @@ video {
     animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
+  .sm\:animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
   .sm\:animate-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
@@ -68417,6 +68431,10 @@ video {
 
   .md\:animate-ping {
     animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .md\:animate-spin-slow {
+    animation: spin 3s linear infinite;
   }
 
   .md\:animate-pulse {
@@ -97653,6 +97671,10 @@ video {
     animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
+  .lg\:animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
   .lg\:animate-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
@@ -126887,6 +126909,10 @@ video {
     animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
+  .xl\:animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
   .xl\:animate-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
@@ -156119,6 +156145,10 @@ video {
 
   .\32xl\:animate-ping {
     animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .\32xl\:animate-spin-slow {
+    animation: spin 3s linear infinite;
   }
 
   .\32xl\:animate-pulse {
