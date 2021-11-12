@@ -1,11 +1,45 @@
+import Expense from "./Expense";
+import { expenses } from "../components/data/expenseData";
+import NewExpense from "./newExpense/NewExpense";
+import { useState } from "react/cjs/react.development";
+
 const App = () => {
+  const [data, setData] = useState(expenses);
+  const [filteredYear, setFilteredYear] = useState("All");
+  const [filteredExpData, setFilteredExpData] = useState(data);
+
+  const addExpenseHandler = (expenseData) => {
+    // const expData = [expenseData, ...data];
+
+    setData((previous) => [expenseData, ...previous]);
+  };
+
+  const onFiteredYear = (selectedYear) => {
+    if (selectedYear === "All") {
+      setFilteredExpData(data);
+    } else {
+      setFilteredExpData(
+        data.filter((exp) => {
+          return exp.date.getFullYear() === +selectedYear;
+        })
+      );
+    }
+    setFilteredYear(selectedYear);
+  };
+
+  console.log(filteredExpData);
   return (
-    <div className="flex flex-col items-start justify-center h-screen p-20 bg-gray-900">
-      <h1 className="text-5xl text-white">Hello Tailwind 👋</h1>
-      <p className="mt-5 text-lg text-gray-400">Start Creating your app...</p>
-      <button className="p-4 mt-5 font-bold text-white bg-green-600 rounded-lg hover:bg-gray-600">
-        Hello Friends 🚀
-      </button>
+    <div className="bg-purple-200">
+      <div>
+        <NewExpense onSaveExp={addExpenseHandler} />
+      </div>
+      <div className="flex justify-center">
+        <Expense
+          onFilteredYear={onFiteredYear}
+          expData={filteredExpData}
+          filteredYear={filteredYear}
+        />
+      </div>
     </div>
   );
 };
