@@ -6,7 +6,7 @@ const ExpenseFilter = ({ onChangrFilter, filteredYear }) => {
   };
   return (
     <div className="flex flex-col">
-      <label className="p-2 text-xl" htmlFor="filter">
+      <label className="p-2 text-xl font-semibold" htmlFor="filter">
         Filter by Years
       </label>
       <select

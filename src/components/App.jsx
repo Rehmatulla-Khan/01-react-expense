@@ -9,9 +9,10 @@ const App = () => {
   const [filteredExpData, setFilteredExpData] = useState(data);
 
   const addExpenseHandler = (expenseData) => {
-    // const expData = [expenseData, ...data];
-
-    setData((previous) => [expenseData, ...previous]);
+    const expData = [expenseData, ...data];
+    setData(expData);
+    setFilteredExpData(expData);
+    // setData((previous) => [expenseData, ...previous]);
   };
 
   const onFiteredYear = (selectedYear) => {
